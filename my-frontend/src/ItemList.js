@@ -5,8 +5,9 @@ const ItemList = () => {
     const[items, setItems] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/items/')
+        axios.get('http://localhost:8000/api/items/')
         .then(response => {
+            console.log(response.data)
             setItems(response.data);
         })
         .catch(error => {
